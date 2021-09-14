@@ -7,32 +7,32 @@ what_day = time.strftime("%A")
 
 mon =['Monday']
 
-if waht_day in mon:
+if what_day in mon:
     print("唉，就是没课")
 
 tues =['Tuesday']
 
-if waht_day in tues:
+if what_day in tues:
     print("早上用户研究，下午新闻评论")
 
 wed =['Wednesday']
 
-if waht_day in wed:
+if what_day in wed:
     print("早上融合新闻学+毛概实践，晚上大英")
     
 thu =['Thursday']
 
-if waht_day in thu:
+if what_day in thu:
     print("早上超哥的Python，下午毛概理论")
     
 fri =['Friday']
 
-if waht_day in fri:
+if what_day in fri:
     print("早上大英+羽毛球，下午舒服无课")
     
 weekend =['Saturday','Sunday']
 
-if waht_day in weekend:
+if what_day in weekend:
     print("Python and CSGO GO GO")
     
     
@@ -43,7 +43,7 @@ time.strftime("%A")
 
 time.strftime("%H:%M")
 
-waht_day = time.strftime("%A")
+what_day = time.strftime("%A")
     
 tues =['Tuesday']
 wed =['Wednesday']
@@ -51,7 +51,7 @@ thu =['Thursday']
 fri =['Friday']
 other =['Monday','Saturday','Sunday']
 
-if waht_day in tues:
+if what_day in tues:
     ass =['7:30']
     bss =['14:00']
     how_long = time. strftime("%H:%M")
@@ -61,7 +61,7 @@ if waht_day in tues:
         print("距离新闻评论上课还有30min")
 
         
-if waht_day in wed:
+if what_day in wed:
     ass =['7:30']
     bss =['9:15']
     css =['18:15']
@@ -74,7 +74,7 @@ if waht_day in wed:
         print("距离大学英语上课还有30min")
     
 
-if waht_day in thu:
+if what_day in thu:
     ass =['9:15']
     bss =['14:00']
     how_long = time. strftime("%H:%M")
@@ -84,7 +84,7 @@ if waht_day in thu:
         print("距离毛概理论上课还有30min")
 
 
-if waht_day in fri:
+if what_day in fri:
     ass =['7:30']
     bss =['10:05']
     how_long = time. strftime("%H:%M")
@@ -94,5 +94,5 @@ if waht_day in fri:
         print("距离大学英语上课还有30min")
 
 
-if waht_day in other:
+if what_day in other:
     print("没课滚")
