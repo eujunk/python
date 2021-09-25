@@ -1,0 +1,349 @@
+# Author:Shaojun
+# Time：0925
+
+
+# 登录系统
+user_date = "junk"
+user_date_vip = "chao"
+password_date = "112233"
+password_date_vip = "123456"
+
+count = 3
+while True:
+    count -= 1
+    username = input("请输入你的账号：")
+    password = input("请输入你的密码：")
+
+    if username == user_date or user_date_vip:
+        if username == user_date:
+            if password == password_date:
+                print("欢迎普通用户", username, "登录系统使用~")
+                break
+            else:
+                if count == 0:
+                    print("您多次输入错误密码，请5分钟后再重试")
+                    break
+                else:
+                    print("您输入的账号或者密码不正确，请重新输入，您还有", count, "次机会")
+
+        if username == user_date_vip:
+            if password == password_date_vip:
+                print("欢迎尊贵的vip用户", username, "登录系统使用~")
+                break
+            else:
+                if count == 0:
+                    print("您多次输入错误密码，请5分钟后再重试")
+                    break
+                else:
+                    print("您输入的账号或者密码不正确，请重新输入，您还有", count, "次机会")
+
+        else:
+            if count == 0:
+                print("您多次输入错误密码，请5分钟后再重试")
+                break
+            else:
+                print("您输入的账号或者密码不正确，请重新输入，您还有", count, "次机会")
+
+if username == user_date:
+    if password == password_date:
+        print()
+        print("普通用户junk，你今天有三次查询课表的机会")
+        print("您可以选择用日期查询一天的课程，也可以用实际时间查询该日之后的课程")
+
+        # 课程表系统
+
+        import datetime
+
+        if username == user_date:
+            count = 3
+            while True:
+                count -= 1
+                print("选择日期查询填Y，选择实际时间查询填N")
+                qwer = input("请选择：")
+                if qwer == 'Y':
+                    aList = '2021'
+                    bList = input("请输入月份:")
+                    cList = input("请输入日期：")
+                    date_one = aList + bList + cList
+                    week = datetime.datetime.strptime(date_one, "%Y%m%d").weekday() + 1
+
+                    what_day = int(week)
+                    if what_day == 1:
+                        print("唉，就是没课")
+                    if what_day == 2:
+                        print("早上8:00-10:25 用户研究 @3实312")
+                        print("下午14:30-15:55 新闻评论 @3实206")
+                    if what_day == 3:
+                        print("早上8:00-9:30 毛概实践 @9-207")
+                        print("早上9:45-12:00 融合新闻学 @新综合楼612")
+                        print("晚上18:45-20:10 大学英语 @9-302")
+                    if what_day == 4:
+                        print("早上9:45-12:00 Python @新综合楼612")
+                        print("下午14:30-16:45 毛概理论 @9-207")
+                    if what_day == 5:
+                        print("早上8:00-9:30 羽毛球 @东区体育馆")
+                        print("早上10:35-12:00 大学英语 @9-302")
+                    if what_day == 6:
+                        print("Python and CSGO GO GO")
+                    if what_day == 7:
+                        print("Python and CSGO GO GO")
+                    if count == 0:
+                        print("您今天的次数已用完")
+                        break
+
+                if qwer == 'N':
+                    aList = '2021'
+                    bList = input("请输入月份:")
+                    cList = input("请输入日期：")
+                    dList = input("请输入时：")
+                    eList = input("请输入分：")
+                    date_one = aList + bList + cList
+                    time_info = datetime.time(int(dList), int(eList), 00)
+                    print(time_info)
+                    week = datetime.datetime.strptime(date_one, "%Y%m%d").weekday() + 1
+
+                    what_day = int(week)
+                    if what_day == 1:
+                        print("唉，就是没课")
+                    if what_day == 2:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(8, 00, 00)
+                        css = datetime.time(10, 25, 00)
+                        dss = datetime.time(14, 30, 00)
+                        ess = datetime.time(15, 55, 00)
+                        fss = datetime.time(23, 59, 00)
+                        if ass < time_info < bss:
+                            print("今天早上8:00-10:25 用户研究 @3实312")
+                            print("下午14:30-15:55 新闻评论 @3实206")
+                        if bss < time_info < css:
+                            print("正在上用户研究，别睡了！")
+                        if css < time_info < dss:
+                            print("下午14:30-15:55 新闻评论 @3实206")
+                        if dss < time_info < ess:
+                            print("正在上新闻评论，听课啦！")
+                        if ess < time_info < fss:
+                            print("明天早上8:00-9:30 毛概实践 @9-207")
+                            print("早上9:45-12:00 融合新闻学 @新综合楼612")
+                            print("晚上18:45-20:10 大学英语 @9-302")
+
+                    if what_day == 3:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(8, 00, 00)
+                        css = datetime.time(9, 30, 00)
+                        dss = datetime.time(9, 45, 00)
+                        ess = datetime.time(12, 00, 00)
+                        fss = datetime.time(18, 45, 00)
+                        gss = datetime.time(20, 10, 00)
+                        hss = datetime.time(23, 59, 00)
+                        if ass < time_info < bss:
+                            print("今天早上8:00-9:30 毛概实践 @9-207")
+                            print("早上9:45-12:00 融合新闻学 @新综合楼612")
+                            print("晚上18:45-20:10 大学英语 @9-302")
+                        if bss < time_info < css:
+                            print("正在上毛概实践，别睡了！")
+                        if css < time_info < dss:
+                            print("待会9:45-12:00 融合新闻学 @新综合楼612")
+                        if dss < time_info < ess:
+                            print("正在上融合新闻学，听课啦！")
+                        if ess < time_info < fss:
+                            print("晚上18:45-20:10 大学英语 @9-302")
+                        if fss < time_info < gss:
+                            print("正在上大学英语，上完回去做作业！")
+                            print("明天早上9:45-12:00 Python @新综合楼612")
+                            print("下午14:30-16:45 毛概理论 @9-207")
+
+                    if what_day == 4:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(9, 45, 00)
+                        css = datetime.time(12, 00, 00)
+                        dss = datetime.time(14, 30, 00)
+                        ess = datetime.time(16, 50, 00)
+                        fss = datetime.time(23, 59, 00)
+                        if ass < time_info < bss:
+                            print("早上9:45-12:00 Python @新综合楼612")
+                            print("下午14:30-16:45 毛概理论 @9-207")
+                        if bss < time_info < css:
+                            print("正在上python，别睡了！")
+                        if css < time_info < dss:
+                            print("下午14:30-16:45 毛概理论 @9-207")
+                        if dss < time_info < ess:
+                            print("正在上毛概理论，听课啦！")
+                        if ess < time_info < fss:
+                            print("明天早上8:00-9:30 羽毛球 @东区体育馆")
+                            print("早上10:35-12:00 大学英语 @9-302")
+                    if what_day == 5:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(8, 00, 00)
+                        css = datetime.time(9, 30, 00)
+                        dss = datetime.time(10, 35, 00)
+                        ess = datetime.time(12, 00, 00)
+                        fss = datetime.time(12, 00, 00)
+                        if ass < time_info < bss:
+                            print("早上8:00-9:30 羽毛球 @东区体育馆")
+                            print("早上10:35-12:00 大学英语 @9-302")
+                        if bss < time_info < css:
+                            print("正在上有羽毛球课，别睡了！")
+                        if css < time_info < dss:
+                            print("早上10:35-12:00 大学英语 @9-302")
+                        if dss < time_info < ess:
+                            print("正在上大学英语，听课啦！")
+                        if ess < time_info < fss:
+                            print("明天周末大放假！！")
+
+                if count == 0:
+                    print("您今天的次数已用完")
+                    break
+
+if username == user_date_vip:
+    if password == password_date_vip:
+        print()
+        print("VIP用户junk，你今天有五次查询课表的机会")
+        print("您可以选择用日期查询一天的课程，也可以用实际时间查询该日之后的课程 ")
+
+        # 课程表系统
+
+        import datetime
+
+        if username == user_date_vip:
+            count = 5
+            while True:
+                count -= 1
+                print("选择日期查询填Y，选择实际时间查询填N")
+                qwer = input("请选择：")
+                if qwer == 'Y':
+                    aList = '2021'
+                    bList = input("请输入月份:")
+                    cList = input("请输入日期：")
+                    date_one = aList + bList + cList
+                    week = datetime.datetime.strptime(date_one, "%Y%m%d").weekday() + 1
+
+                    what_day = int(week)
+                    if what_day == 1:
+                        print("唉，就是没课")
+                    if what_day == 2:
+                        print("早上8:00-10:25 用户研究 @3实312")
+                        print("下午14:30-15:55 新闻评论 @3实206")
+                    if what_day == 3:
+                        print("早上8:00-9:30 毛概实践 @9-207")
+                        print("早上9:45-12:00 融合新闻学 @新综合楼612")
+                        print("晚上18:45-20:10 大学英语 @9-302")
+                    if what_day == 4:
+                        print("早上9:45-12:00 Python @新综合楼612")
+                        print("下午14:30-16:45 毛概理论 @9-207")
+                    if what_day == 5:
+                        print("早上8:00-9:30 羽毛球 @东区体育馆")
+                        print("早上10:35-12:00 大学英语 @9-302")
+                    if what_day == 6:
+                        print("Python and CSGO GO GO")
+                    if what_day == 7:
+                        print("Python and CSGO GO GO")
+                    if count == 0:
+                        print("您今天的次数已用完")
+                        break
+
+                if qwer == 'N':
+                    aList = '2021'
+                    bList = input("请输入月份:")
+                    cList = input("请输入日期：")
+                    dList = input("请输入时：")
+                    eList = input("请输入分：")
+                    date_one = aList + bList + cList
+                    time_info = datetime.time(int(dList), int(eList), 00)
+                    print(time_info)
+                    week = datetime.datetime.strptime(date_one, "%Y%m%d").weekday() + 1
+
+                    what_day = int(week)
+                    if what_day == 1:
+                        print("唉，就是没课")
+                    if what_day == 2:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(8, 00, 00)
+                        css = datetime.time(10, 25, 00)
+                        dss = datetime.time(14, 30, 00)
+                        ess = datetime.time(15, 55, 00)
+                        fss = datetime.time(23, 59, 00)
+                        if ass < time_info < bss:
+                            print("今天早上8:00-10:25 用户研究 @3实312")
+                            print("下午14:30-15:55 新闻评论 @3实206")
+                        if bss < time_info < css:
+                            print("正在上用户研究，别睡了！")
+                        if css < time_info < dss:
+                            print("下午14:30-15:55 新闻评论 @3实206")
+                        if dss < time_info < ess:
+                            print("正在上新闻评论，听课啦！")
+                        if ess < time_info < fss:
+                            print("明天早上8:00-9:30 毛概实践 @9-207")
+                            print("早上9:45-12:00 融合新闻学 @新综合楼612")
+                            print("晚上18:45-20:10 大学英语 @9-302")
+
+                    if what_day == 3:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(8, 00, 00)
+                        css = datetime.time(9, 30, 00)
+                        dss = datetime.time(9, 45, 00)
+                        ess = datetime.time(12, 00, 00)
+                        fss = datetime.time(18, 45, 00)
+                        gss = datetime.time(20, 10, 00)
+                        hss = datetime.time(23, 59, 00)
+                        if ass < time_info < bss:
+                            print("今天早上8:00-9:30 毛概实践 @9-207")
+                            print("早上9:45-12:00 融合新闻学 @新综合楼612")
+                            print("晚上18:45-20:10 大学英语 @9-302")
+                        if bss < time_info < css:
+                            print("正在上毛概实践，别睡了！")
+                        if css < time_info < dss:
+                            print("待会9:45-12:00 融合新闻学 @新综合楼612")
+                        if dss < time_info < ess:
+                            print("正在上融合新闻学，听课啦！")
+                        if ess < time_info < fss:
+                            print("晚上18:45-20:10 大学英语 @9-302")
+                        if fss < time_info < gss:
+                            print("正在上大学英语，上完回去做作业！")
+                            print("明天早上9:45-12:00 Python @新综合楼612")
+                            print("下午14:30-16:45 毛概理论 @9-207")
+
+                    if what_day == 4:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(9, 45, 00)
+                        css = datetime.time(12, 00, 00)
+                        dss = datetime.time(14, 30, 00)
+                        ess = datetime.time(16, 50, 00)
+                        fss = datetime.time(23, 59, 00)
+                        if ass < time_info < bss:
+                            print("早上9:45-12:00 Python @新综合楼612")
+                            print("下午14:30-16:45 毛概理论 @9-207")
+                        if bss < time_info < css:
+                            print("正在上python，别睡了！")
+                        if css < time_info < dss:
+                            print("下午14:30-16:45 毛概理论 @9-207")
+                        if dss < time_info < ess:
+                            print("正在上毛概理论，听课啦！")
+                        if ess < time_info < fss:
+                            print("明天早上8:00-9:30 羽毛球 @东区体育馆")
+                            print("早上10:35-12:00 大学英语 @9-302")
+                    if what_day == 5:
+                        ass = datetime.time(00, 00, 00)
+                        bss = datetime.time(8, 00, 00)
+                        css = datetime.time(9, 30, 00)
+                        dss = datetime.time(10, 35, 00)
+                        ess = datetime.time(12, 00, 00)
+                        fss = datetime.time(12, 00, 00)
+                        if ass < time_info < bss:
+                            print("早上8:00-9:30 羽毛球 @东区体育馆")
+                            print("早上10:35-12:00 大学英语 @9-302")
+                        if bss < time_info < css:
+                            print("正在上有羽毛球课，别睡了！")
+                        if css < time_info < dss:
+                            print("早上10:35-12:00 大学英语 @9-302")
+                        if dss < time_info < ess:
+                            print("正在上大学英语，听课啦！")
+                        if ess < time_info < fss:
+                            print("明天周末大放假！！")
+                    if what_day == 6:
+                        print("Python and CSGO GO GO")
+                    if what_day == 7:
+                        print("Python and CSGO GO GO")
+
+                if count == 0:
+                    print("您今天的次数已用完")
+                    break
