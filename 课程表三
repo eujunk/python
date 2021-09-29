@@ -47,7 +47,7 @@ while True:
 if username == user_date:
     if password == password_date:
         print()
-        print("普通用户junk，你今天有三次查询课表的机会")
+        print("普通用户junk，你今天有五次查询课表的机会")
         print("您可以选择用日期查询一天的课程，也可以用实际时间查询该日之后的课程")
 
         # 课程表系统
@@ -55,7 +55,7 @@ if username == user_date:
         import datetime
 
         if username == user_date:
-            count = 3
+            count = 5
             while True:
                 count -= 1
                 print("选择日期查询填Y，选择实际时间查询填N")
@@ -197,7 +197,7 @@ if username == user_date:
 if username == user_date_vip:
     if password == password_date_vip:
         print()
-        print("VIP用户junk，你今天有五次查询课表的机会")
+        print("VIP用户chao，你今天有十次查询课表的机会")
         print("您可以选择用日期查询一天的课程，也可以用实际时间查询该日之后的课程 ")
 
         # 课程表系统
@@ -205,7 +205,7 @@ if username == user_date_vip:
         import datetime
 
         if username == user_date_vip:
-            count = 5
+            count = 10
             while True:
                 count -= 1
                 print("选择日期查询填Y，选择实际时间查询填N")
