@@ -1,0 +1,125 @@
+# Author:Shaojun
+# Time：
+
+import datetime
+import time
+import random
+
+
+
+
+
+datetime.datetime.today()
+
+
+
+
+
+help(datetime)
+
+
+
+
+datetime.time.today()
+
+
+
+
+
+#自定义时间格式（样式）
+time.strftime("%Y/%m/%d %H:%M")
+
+
+
+
+
+for i in range(5):
+    print(i)
+
+
+
+
+
+list(range(5,10))
+
+
+
+
+
+
+list(range(0,10,3))
+
+
+
+
+
+list(range(-10,-100,-30))
+
+
+
+
+
+list(range(-10,-100,-20,))
+
+
+
+
+
+for item in range(5):
+    print(item)
+
+
+
+
+
+range(5)
+
+
+
+
+
+odds=[1,3,5,7]
+
+
+
+
+
+random.choice(odds)
+
+
+
+
+
+print(random.random())
+time.sleep(1)
+print(random.random())
+time.sleep(1)
+print(random.random())
+time.sleep(1)
+print(random.random())
+
+
+
+
+
+from datetime import datetime
+import time
+import random
+
+odds = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59]
+
+#range(5)决定了for循环的次数，即for循环过程的执行次数
+for i in range(5):
+    #由
+    right_this_second = datetime.today().second
+
+if right_this_second in odds:
+    print("This minute seems a little odd.")
+else:
+    print("Not an odd minute.")
+    wait_time = random.randint(1,5)
+    print("等待的随机时间：",wait_time)
+    time.sleep(wait_time)
+
+
+
