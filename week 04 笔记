@@ -1,0 +1,33 @@
+word ="bottles"
+for beer_num in range(99,0,-1):
+    print(beer_num,word,"of beer on the wall")
+    print(beer_num,word,"of beer")
+    print("Take one down.")
+    print("Pass it around")
+    #1. 拿走一瓶
+    if beer_num == 1:
+        print("没有足够的bottles在wall上了")
+    # 2. 还有足够的啤酒
+    else:
+        new_num = beer_num - 1
+
+        if new_num == 1:
+            word = "bottle"
+            print(new_num,word,"of beer on the wall")
+    #空行
+    print( )
+
+
+
+# Author:Shaojun
+# Time：0923—week04
+
+# 注释的意义：
+# 1.可以记录我们的代码过程意义 （一般循环、条件判断、函数、对象、类都要有自己的描述，对变量作描述）
+# 2.可以忽略一部分代码，跳过该部分的代码
+
+
+# A. 单行注释： #
+# B. 多行注释：'''注释内容''' """注释内容"""
+# C. 多行注释可以当做 str 赋值给变量
+
